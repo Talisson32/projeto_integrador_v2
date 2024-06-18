@@ -1,0 +1,16 @@
+CREATE TABLE categoria (
+    id SERIAL NOT NULL,
+    categoria VARCHAR(100),
+    descricao VARCHAR(100),
+    PRIMARY KEY (id)
+);
+
+create table epi(
+	id serial not null,
+	nome varchar(100),
+	categoria int,
+	primary key (id),
+	constraint fk_epi_categoria
+	 foreign key (categoria) references categoria(id)
+);
+
